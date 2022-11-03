@@ -1,0 +1,10 @@
+{
+    "private": true,
+    "workspaces": [
+        "packages/server"
+    ],
+    "volta": {
+        "node": "16.18.0",
+        "yarn": "1.22.19"
+      }
+}

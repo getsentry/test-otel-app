@@ -1,0 +1,20 @@
+{
+  "name": "test-express-app",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.2.0",
+    "@opentelemetry/instrumentation": "^0.33.0",
+    "@opentelemetry/instrumentation-express": "^0.31.3",
+    "@opentelemetry/instrumentation-http": "^0.33.0",
+    "@opentelemetry/sdk-trace-node": "^1.7.0",
+    "@sentry/node": "^7.17.3",
+    "@sentry/opentelemetry-node": "./../sentry-javascript/packages/opentelemetry-node",
+    "express": "~4.18.2"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
