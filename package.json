@@ -1,7 +1,8 @@
 {
     "private": true,
     "workspaces": [
-        "packages/server"
+        "packages/server",
+        "packages/client"
     ],
     "volta": {
         "node": "16.18.0",

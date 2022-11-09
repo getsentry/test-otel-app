@@ -1,27 +1,26 @@
 const Sentry = require("@sentry/node");
 const { setupTracing } = require("./tracer");
+const opentelemetry = require("@opentelemetry/api");
 
- Sentry.init({
+Sentry.init({
   dsn: process.env.SENTRY_DSN,
-  integrations: [],
   debug: true,
   tracesSampleRate: 1,
-  defaultIntegrations: false
-});    
+});
 
-let tracer = setupTracing('test-express-app');
+let tracer = setupTracing("test-express-app");
 
 const express = require("express");
 
 const app = express();
 
-const port = 3000;
+const port = 4000;
 
 app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
-
+// app.use(Sentry.Handlers.tracingHandler());
 
 app.get("/test", function (req, res) {
+  console.log(opentelemetry.propagation.fields());
   res.send({ version: "v2" });
 });
 
